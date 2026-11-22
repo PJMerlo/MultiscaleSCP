@@ -7,3 +7,6 @@ inst/doc
 /src/*.so
 /src/*.dll
 .DS_Store
+.Rproj.user
+docs
+.Rhistory

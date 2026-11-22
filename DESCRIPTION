@@ -16,6 +16,7 @@ Authors@R:
              role = "ctb")
     )
 Maintainer: Pablo Merlo <pablo.merlo@universityofgalway.ie>
+URL: https://pjmerlo.github.io/MultiscaleSCP/
 Description: Provides tools for multiscale systematic conservation planning
     using the H3 hierarchical hexagonal grid system (Uber Technologies (2024)
     <https://h3geo.org>) and the 'prioritizr' package (Hanson et al. (2025)
@@ -60,3 +61,4 @@ Roxygen: list(markdown = TRUE)
 Config/testthat/edition: 3
 LinkingTo: Rcpp
 Config/roxygen2/version: 8.0.0
+Config/Needs/website: rmarkdown

@@ -48,8 +48,6 @@ different H3 resolutions to contribute toward the same conservation feature
 targets. Costs and feature representation are evaluated consistently across
 the nested planning-unit hierarchy so that shared spatial contributions are
 counted once.
-Internally, this is achieved using non-overlapping spatial accounting units
-called atoms, while planning units remain the units selected in the solution.
 
 # Purpose of this vignette
 
@@ -141,6 +139,27 @@ maps <- build_h3_maps(pu,res_levels = c(6L, 7L))
 
 knitr::kable(sf::st_drop_geometry(pu)[, c("h3_address", "res", "cost")])
 ```
+
+```{r planning-units-map, echo=FALSE, fig.width=7, fig.height=4.5, fig.cap="H3 planning units at resolutions 6 and 7."}
+
+# Resolution 6: parent boundaries
+plot(sf::st_geometry(pu[pu$res == 6L, ]),
+     col = NA, border = "black", lwd = 2,
+     main = "Multiscale H3 planning units")
+
+# Resolution 7: child boundaries
+plot(sf::st_geometry(pu[pu$res == 7L, ]),
+     col = NA, border = "grey50", lwd = 1, add = TRUE)
+
+plot(sf::st_geometry(pu[pu$res == 6L, ]),
+     col = NA, border = "black", lwd = 2, add = TRUE)
+
+legend("bottomleft",
+       legend = c("Resolution 6 (parent)", "Resolution 7 (child)"),
+       col = c("black", "grey50"),
+       lwd = c(2, 1), bty = "n")
+```
+
 The `h3_address` column supplied by H3 is the planning-unit ID used throughout the workflow.
 `build_h3_maps()` identifies the parent--child relationships among the H3
 planning units and stores the hierarchy used by the multiscale functions.

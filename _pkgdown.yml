@@ -1,0 +1,12 @@
+
+url: https://pjmerlo.github.io/MultiscaleSCP/
+
+template:
+  bootstrap: 5
+
+articles:
+  - title: Tutorials and case studies
+    navbar: ~
+    contents:
+      - MultiscaleSCP_workflow_vignette
+      - articles/galway_bay
